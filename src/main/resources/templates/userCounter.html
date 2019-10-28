@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+ 
+<meta th:replace="fragment/parts :: charset">
+
+<meta th:replace= "fragment/parts :: viewport">
+
+<link th:replace= "fragment/parts :: bootstrap">
+
+<link th:replace = "fragment/parts :: css">
+
+<title>User Counter Page</title>
+</head>
+<body class="bg-secondary">
+	<div th:replace ="fragment/parts :: navigation"></div>
+	
+	<div class = "container">
+	<h1 class="text-info text-center font-weight-bold">Here is the users Who logged in</h1>
+	<hr>
+	
+			<table class="table table-bordered table-dark">
+				<tbody>
+				<tr>
+					
+					<td scope="row"><label>Usernames:</label></td>
+					<td><th:block th:text="${usersLoggedIn }"></th:block></td>
+				</tr>
+				
+				<tr>
+					<td scope="row"><label>total Logged In Times:</label></td>
+					<td><th:block th:text="${totalLoggedIn}"></th:block></td>
+				</tr>
+			</tbody>	
+		</table>
+	</div>
+	
+	<div th:replace ="fragment/parts :: footer"></div>
+</body>
+</html>

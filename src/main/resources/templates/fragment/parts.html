@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+  	<meta th:fragment="charset"  charset="utf-8">
+    <meta th:fragment="viewport" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link th:fragment="bootstrap" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <link th:fragment="css" href="css/blogPost.css"  rel="stylesheet">
+
+
+<title>Parts of ThymeLeaf</title>
+</head>
+<body>
+
+
+<div th:fragment="navigation" class="cointainer">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" th:href="@{/}">HomePage</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" th:href="@{/profile}">To Profile
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{/userCounter}">To userCounter</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{/signUp}">Sign Up</a>
+          </li>
+          
+          <li class="nav-item">
+            <form action=# th:action="@{/logout}" method="post">
+            	<input type="submit" value="logout" class="nav-link" id="logout">
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+
+
+<div th:fragment="footer" class="container">
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">This Website is made by Quan Nguyen (Jimmy Youhei)</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+</div>
+
+
+
+</body>
+</html>

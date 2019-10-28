@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+
+ 
+<meta th:replace="fragment/parts :: charset">
+
+<meta th:replace= "fragment/parts :: viewport">
+
+<link th:replace= "fragment/parts :: bootstrap">
+
+<link th:replace = "fragment/parts :: css">
+
+
+<title>Login Page</title>
+
+</head>
+
+<body class="bg-secondary">
+
+
+<div class="container">
+	<h1 class="text-info text-center font-weight-bold">Login Page</h1>
+	<hr>
+	<form action="#" th:action="@{/authenticateUser}" method="post">
+
+	<p th:if="${loginError}">Username or password or both are incorrect please check</p>
+
+	<p th:if="${param.logout != null}">You Are logged out</p>
+	
+	<p th:if="${noUser}">there is no user please <a th:href="@{/signUp}">sign up</a>  </p>
+	
+	<p th:if="${firstSignUp}">Sign Up Success Please Login</p>
+
+		<table class="table table-bordered table-dark">
+			<tbody>
+				<tr>
+					<td scope="row"><label>Username:</label></td>
+					<td><input type="text" name="username"/></td>
+				</tr>
+				
+				<tr>
+					<td scope="row"><label>Password:</label></td>
+					<td><input type="text" name="password"/></td>
+				</tr>
+				
+				<tr>
+					<td scope="row"></td>
+					<td><input type="submit" value="check"></td>
+				</tr>
+			</tbody>	
+		</table>
+	</form>
+	
+</div>
+
+
+</body>
+</html>

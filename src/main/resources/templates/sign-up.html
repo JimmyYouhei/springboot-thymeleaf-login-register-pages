@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta th:replace="fragment/parts :: charset">
+
+<meta th:replace= "fragment/parts :: viewport">
+
+<link th:replace= "fragment/parts :: bootstrap">
+
+<link th:replace = "fragment/parts :: css">
+
+<title>Sign Up Page</title>
+
+</head>
+<body class="bg-secondary">
+
+
+<div class="container">
+	<h1 class="text-info text-center font-weight-bold">Sign-Up Page</h1>
+	<hr>
+	<form action="#" th:action="@{/signUpProccess}" th:object="${user}" method="post" >
+	<p th:if="${usernameExist}">username already exist please choose another</p>
+		<table class="table table-bordered table-dark">
+			<tbody>
+				<tr>
+					<td scope="row"><label>Username:</label></td>
+					<td><input th:field="*{username}"/></td>
+					<td th:errors="*{username}">
+					</td>
+				</tr>
+				
+				<tr>
+					<td scope="row"><label>Password:</label></td>
+					<td><input th:field="*{password}"/></td>
+					<td th:errors="*{password}"></td>
+				</tr>
+				
+				<tr>
+					<td scope="row"></td>
+					<td><input type="submit" value="Sign Up"></td>
+				</tr>
+			</tbody>	
+		</table>
+	</form>
+	
+</div>
+</body>
+
+</body>
+</html>

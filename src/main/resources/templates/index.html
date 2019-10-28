@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta th:replace="fragment/parts :: charset">
+
+<meta th:replace= "fragment/parts :: viewport">
+
+<link th:replace= "fragment/parts :: bootstrap">
+
+<link th:replace = "fragment/parts :: css">
+
+<title>Home Page</title>
+</head>
+<body class="bg-secondary">
+	
+	<div th:replace ="fragment/parts :: navigation"></div>
+	
+	<div th:switch="${firstLogin}" class="container">
+	
+	<h1 th:case="true" class="text-info text-center font-weight-bold">Hi Welcome to the board</h1>
+	
+	<h1 th:case="*" class="text-info text-center font-weight-bold"> Hi Welcome Back</h1>
+		
+	</div>
+	
+	<div th:replace ="fragment/parts :: footer"></div>
+
+</body>
+</html>

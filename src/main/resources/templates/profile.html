@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+ 
+<meta th:replace="fragment/parts :: charset">
+
+<meta th:replace= "fragment/parts :: viewport">
+
+<link th:replace= "fragment/parts :: bootstrap">
+
+<link th:replace = "fragment/parts :: css">
+
+<title>Profile Page</title>
+</head>
+<body class="bg-secondary">
+	<div th:replace ="fragment/parts :: navigation"></div>
+	
+	<div class = "container">
+	<h1 class="text-info text-center font-weight-bold">Here is the user Profile</h1>
+	<hr>
+	
+			<table class="table table-bordered table-dark">
+				<tbody>
+				<tr>
+					<td scope="row"><label>Username:</label></td>
+					<td><th:block th:text="${username}"></th:block></td>
+				</tr>
+				
+				
+				<tr>
+					<td scope="row"><label>Password:</label></td>
+					<td><th:block th:text="${password}"></th:block></td>
+				</tr>
+				
+			
+				<tr>
+					<td scope="row"><label>Logged In Times:</label></td>
+					<td><th:block th:text="${logInTimes}"></th:block></td>
+				</tr>
+				
+			</tbody>	
+		</table>
+	</div>
+	
+	<div th:replace ="fragment/parts :: footer"></div>
+</body>
+</html>
